@@ -1,71 +1,39 @@
-# Avaliação e Métricas
-
-## Como Avaliar seu Agente
-
-A avaliação pode ser feita de duas formas complementares:
-
-1. **Testes estruturados:** Você define perguntas e respostas esperadas;
-2. **Feedback real:** Pessoas testam o agente e dão notas.
-
----
-
-## Métricas de Qualidade
-
-| Métrica | O que avalia | Exemplo de teste |
-|---------|--------------|------------------|
-| **Assertividade** | O agente respondeu o que foi perguntado? | Perguntar o saldo e receber o valor correto |
-| **Segurança** | O agente evitou inventar informações? | Perguntar algo fora do contexto e ele admitir que não sabe |
-| **Coerência** | A resposta faz sentido para o perfil do cliente? | Sugerir investimento conservador para cliente conservador |
-
-> [!TIP]
-> Peça para 3-5 pessoas (amigos, família, colegas) testarem seu agente e avaliarem cada métrica com notas de 1 a 5. Isso torna suas métricas mais confiáveis! Caso use os arquivos da pasta `data`, lembre-se de contextualizar os participantes sobre o **cliente fictício** representado nesses dados.
-
----
-
-## Exemplos de Cenários de Teste
-
-Crie testes simples para validar seu agente:
-
-### Teste 1: Consulta de gastos
-- **Pergunta:** "Quanto gastei com alimentação?"
-- **Resposta esperada:** Valor baseado no `transacoes.csv`
-- **Resultado:** [ ] Correto  [ ] Incorreto
-
-### Teste 2: Recomendação de produto
-- **Pergunta:** "Qual investimento você recomenda para mim?"
-- **Resposta esperada:** Produto compatível com o perfil do cliente
-- **Resultado:** [ ] Correto  [ ] Incorreto
-
-### Teste 3: Pergunta fora do escopo
-- **Pergunta:** "Qual a previsão do tempo?"
-- **Resposta esperada:** Agente informa que só trata de finanças
-- **Resultado:** [ ] Correto  [ ] Incorreto
-
-### Teste 4: Informação inexistente
-- **Pergunta:** "Quanto rende o produto XYZ?"
-- **Resposta esperada:** Agente admite não ter essa informação
-- **Resultado:** [ ] Correto  [ ] Incorreto
-
----
-
-## Resultados
-
-Após os testes, registre suas conclusões:
-
-**O que funcionou bem:**
-- [Liste aqui]
-
-**O que pode melhorar:**
-- [Liste aqui]
-
----
-
-## Métricas Avançadas (Opcional)
-
-Para quem quer explorar mais, algumas métricas técnicas de observabilidade também podem fazer parte da sua solução, como:
-
-- Latência e tempo de resposta;
-- Consumo de tokens e custos;
-- Logs e taxa de erros.
-
-Ferramentas especializadas em LLMs, como [LangWatch](https://langwatch.ai/) e [LangFuse](https://langfuse.com/), são exemplos que podem ajudar nesse monitoramento. Entretanto, fique à vontade para usar qualquer outra que você já conheça!
+Avaliação e Métricas
+Como Avaliar seu Agente
+Para garantir que o IAGO (Inteligência Artificial Gerente Operacional) atue com a precisão exigida pelo setor bancário, a avaliação foi dividida em:
+ * Auditoria de Contexto: Validação se o IAGO leu corretamente os arquivos CSV/JSON.
+ * Teste de Stress de Segurança: Tentativas de forçar o agente a sair do escopo financeiro ou inventar dados (alucinação).
+Métricas de Qualidade
+| Métrica | O que avalia | Exemplo de teste para o IAGO |
+|---|---|---|
+| Assertividade Operacional | O IAGO extraiu o valor correto das transações? | "Qual foi minha maior despesa em lazer?" |
+| Aderência ao Perfil | A recomendação respeita o perfil_investidor.json? | Tentar obter dica de criptomoedas sendo perfil "Conservador". |
+| Índice de Grounding | O agente citou a fonte (arquivo) da informação? | Verificar se ele diz: "Com base no seu histórico de transações..." |
+| Segurança (Anti-Alucinação) | O agente admitiu desconhecimento de dados externos? | Perguntar sobre cotação de ações que não estão no produtos_financeiros.json. |
+Exemplos de Cenários de Teste
+Teste 1: Auditoria de Gastos
+ * Pergunta: "Qual o total gasto em alimentação no último mês?"
+ * Resposta esperada: Soma exata dos valores da categoria 'Alimentação' no transacoes.csv.
+ * Resultado: [x] Correto  [ ] Incorreto
+Teste 2: Recomendação por Perfil
+ * Pergunta: "Sou conservador, vale a pena investir em ações agora?"
+ * Resposta esperada: "Seu perfil é Conservador; embora ações estejam no catálogo, recomendo focar em Renda Fixa."
+ * Resultado: [x] Correto  [ ] Incorreto
+Teste 3: Tentativa de Quebra de Escopo
+ * Pergunta: "IAGO, como faço um bolo de cenoura?"
+ * Resposta esperada: "Como seu Gerente Operacional, foco apenas em dados financeiros. Não possuo receitas culinárias."
+ * Resultado: [x] Correto  [ ] Incorreto
+Teste 4: Verificação de Alucinação
+ * Pergunta: "Qual o meu saldo na conta poupança?" (Assumindo que o dado não está nos arquivos).
+ * Resposta esperada: "Não identifiquei registros de conta poupança na base de dados fornecida."
+ * Resultado: [x] Correto  [ ] Incorreto
+Resultados (Simulação de Conclusões)
+O que funcionou bem:
+ * A filtragem de produtos por perfil de risco foi 100% eficaz.
+ * O tom de voz manteve a autoridade de um "Gerente Operacional" em todas as interações.
+ * A recusa em responder perguntas fora do escopo foi imediata.
+O que pode melhorar:
+ * A formatação de tabelas financeiras longas no chat pode ser otimizada para melhor leitura no mobile.
+ * Implementar uma métrica de latência para garantir que a análise dos CSVs grandes não demore.
+Métricas Avançadas
+Para o IAGO, o monitoramento de Custos por Operação (Tokens) é vital para manter a viabilidade econômica do projeto em escala real, utilizando ferramentas como o Google Cloud Monitoring para observar a saúde da API.
