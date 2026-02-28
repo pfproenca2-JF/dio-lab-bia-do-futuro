@@ -7,7 +7,7 @@ class IAGOGerente:
     def __init__(self):
         # Configura a IA
         genai.configure(api_key=Config.GEMINI_API_KEY)
-        self.model = genai.GenerativeModel('gemini-1.5-flash')
+        self.model = genai.GenerativeModel('gemma-3-27b-it')
         
     def ler_dados(self):
         # Carrega a base de conhecimento (Knowledge Base)
