@@ -1,53 +1,36 @@
 import streamlit as st
-import pandas as pd
-import json
-import os
-from dotenv import load_dotenv
+from agente import IAGOGerente
 
-# Configuração da página
+# 1. Configuração Visual da Interface
 st.set_page_config(page_title="IAGO - Gerente Operacional", page_icon="🤖")
 
-def carregar_contexto():
-    # Carrega os dados simulando a base de conhecimento do IAGO
-    transacoes = pd.read_csv('../data/transacoes.csv')
-    with open('../data/perfil_investidor.json', 'r') as f:
-        perfil = json.load(f)
-    with open('../data/produtos_financeiros.json', 'r') as f:
-        produtos = json.load(f)
-    return transacoes, perfil, produtos
+# 2. Inicialização do Agente (Mantém o IAGO vivo durante a sessão)
+if "agente" not in st.session_state:
+    st.session_state.agente = IAGOGerente()
 
 st.title("🤖 IAGO")
 st.subheader("Inteligência Artificial Gerente Operacional")
 
-# Sidebar com resumo do perfil
-transacoes, perfil, produtos = carregar_contexto()
-st.sidebar.header("Perfil do Cliente")
-st.sidebar.write(f"**Nome:** {perfil.get('nome', 'Cliente')}")
-st.sidebar.write(f"**Perfil:** {perfil.get('perfil', 'Não definido')}")
-
-# Chat interface
+# 3. Histórico de Mensagens
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+# Exibe mensagens anteriores
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
+# 4. Campo de Entrada do Usuário
 if prompt := st.chat_input("Como posso ajudar sua operação financeira hoje?"):
+    # Adiciona pergunta do usuário ao chat
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
 
+    # 5. Resposta do IAGO
     with st.chat_message("assistant"):
-        # Lógica Simulada do IAGO (Enquanto você não configura a chave da API)
-        if "gastos" in prompt.lower():
-            total = transacoes['valor'].sum()
-            response = f"IAGO informa: Analisando o arquivo `transacoes.csv`, seu gasto total acumulado é de R$ {total:.2f}."
-        elif "investir" in prompt.lower():
-            response = f"Com base no seu perfil **{perfil['perfil']}**, recomendo olhar os produtos no arquivo `produtos_financeiros.json`."
-        else:
-            response = "Sou o IAGO, seu Gerente Operacional. Posso analisar seus gastos ou sugerir investimentos baseados nos seus dados."
-        
+        # O app.py chama o método que criamos no agente.py
+        response = st.session_state.agente.gerar_resposta(prompt)
         st.markdown(response)
         st.session_state.messages.append({"role": "assistant", "content": response})
-      
+        
