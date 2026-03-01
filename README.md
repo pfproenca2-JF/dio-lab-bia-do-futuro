@@ -1,11 +1,26 @@
 # 🤖 Agente Financeiro Inteligente com IA Generativa
 
-### 1. Visão Geral e Persona
-![Capa do Projeto](./assets/1_Iago_capa.png)
-*O IAGO foi concebido para ser um Gerente Operacional Inteligente, focado em proatividade financeira.*
+## 📊 Visão Geral do Projeto
 
-![Persona do IAGO](./assets/3_Iago_persona.png)
-*Definição de uma persona técnica e consultiva para garantir segurança e clareza ao investidor.*
+### 1. Persona e Proatividade
+![Capa do Projeto](./assets/1_Iago_capa.png)
+*O IAGO (Inteligência Artificial Gerente Operacional) foi desenhado para antecipar necessidades financeiras com um tom consultivo e seguro.*
+
+![Persona](./assets/3_Iago_persona.png)
+*Definição estratégica da persona para garantir uma comunicação clara e profissional com o investidor.*
+
+### 2. Arquitetura Técnica (RAG & Grounding)
+![Base de Conhecimento](./assets/4_Iago_base.png)
+*Implementação de **Grounding** utilizando arquivos CSV e JSON. O IAGO não "alucina"; ele baseia todas as sugestões em dados reais de transações e perfis.*
+
+![Stack Tecnológica](./assets/6_Iago_stack.png)
+*Tecnologias utilizadas: Python (Pandas) para manipulação de dados, Streamlit para interface e Google Gemini como motor de inferência.*
+
+### 3. Diagnóstico e Resiliência
+![Análise de Erro](./assets/7_Iago_erro.png)
+*Transparência Técnica: Diagnóstico detalhado do Erro 404 enfrentado em ambiente mobile, demonstrando capacidade de análise de causa raiz e tratamento de APIs.*
+
+---
 
 ## Contexto
 
