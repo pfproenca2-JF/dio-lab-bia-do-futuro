@@ -1,5 +1,3 @@
-# Pitch (3 minutos)
-
 > [!TIP]
 ## 🚀 Apresentação Executiva do IAGO
 
@@ -34,7 +32,9 @@
 ![Roadmap de Evolução](../assets/9_Iago_evolução.png)
 *Visão de futuro para integração com APIs bancárias reais e expansão do portfólio de investimentos.*
 
- 
+
+# Pitch (3 minutos)
+
 ## Roteiro Sugerido
 
 ### 1. O Problema (30 seg)
