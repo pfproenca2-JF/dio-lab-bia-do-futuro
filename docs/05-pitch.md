@@ -1,7 +1,39 @@
 # Pitch (3 minutos)
 
 > [!TIP]
-> Você pode usar alguns slides pra apoiar no seu Pitch e mostrar sua solução na prática.
+## 🚀 Apresentação Executiva do IAGO
+
+### 1. Visão Geral e Persona
+![Capa do Projeto](../assets/1_Iago_capa.png)
+*O IAGO foi concebido para ser um Gerente Operacional Inteligente, focado em proatividade financeira.*
+
+![Persona e Tom de Voz](../assets/3_Iago_persona.png)
+*Definição de uma persona técnica e consultiva, garantindo empatia e autoridade nas respostas.*
+
+---
+
+### 2. Arquitetura e Base de Conhecimento (RAG)
+![Grounding e Base de Dados](../assets/4_Iago_base.png)
+*Utilização de RAG (Geração Aumentada por Recuperação) com dados mockados de transações e perfis para eliminar alucinações.*
+
+![Stack Tecnológica](../assets/6_Iago_stack.png)
+*Stack robusta utilizando Python, Pandas para manipulação de dados e Google Gemini como motor de IA.*
+
+---
+
+### 3. Validação Técnica e Diagnóstico
+![Análise de Erro Operacional](../assets/7_Iago_erro.png)
+*Transparência técnica: Diagnóstico do erro 404 de API identificado durante a execução em ambiente mobile.*
+
+![Solução em Nuvem](../assets/8_Iago_solução.png)
+*Plano de mitigação para transição de ambiente local para infraestrutura escalável em nuvem.*
+
+---
+
+### 4. Impacto e Evolução
+![Roadmap de Evolução](../assets/9_Iago_evolução.png)
+*Visão de futuro para integração com APIs bancárias reais e expansão do portfólio de investimentos.*
+
  
 ## Roteiro Sugerido
 
@@ -41,4 +73,4 @@ Execução 100% em ambiente mobile e uso de dados estruturados para evitar aluci
 
 > Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
 
-[Link do vídeo]
+https://youtu.be/C6Sqw-U8oBE
