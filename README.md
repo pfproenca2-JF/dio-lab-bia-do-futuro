@@ -1,8 +1,11 @@
 # 🤖 Agente Financeiro Inteligente com IA Generativa
 
 ### 1. Visão Geral e Persona
-![Capa do Projeto](../assets/1_Iago_capa.png)
+![Capa do Projeto](./assets/1_Iago_capa.png)
 *O IAGO foi concebido para ser um Gerente Operacional Inteligente, focado em proatividade financeira.*
+
+![Persona do IAGO](./assets/3_Iago_persona.png)
+*Definição de uma persona técnica e consultiva para garantir segurança e clareza ao investidor.*
 
 ## Contexto
 
