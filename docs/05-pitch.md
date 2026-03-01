@@ -71,6 +71,4 @@ Execução 100% em ambiente mobile e uso de dados estruturados para evitar aluci
 
 ## Link do Vídeo
 
-> Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
-
 https://youtu.be/C6Sqw-U8oBE
