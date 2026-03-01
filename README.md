@@ -1,5 +1,9 @@
 # 🤖 Agente Financeiro Inteligente com IA Generativa
 
+### 1. Visão Geral e Persona
+![Capa do Projeto](../assets/1_Iago_capa.png)
+*O IAGO foi concebido para ser um Gerente Operacional Inteligente, focado em proatividade financeira.*
+
 ## Contexto
 
 Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
